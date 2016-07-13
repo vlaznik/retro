@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Retro Games</h1>
+<h2>Spoderman</p>
+  <img class="parker" src="http://vignette4.wikia.nocookie.net/theuncledolanshow/images/9/95/Spoderman.gif/revision/latest?cb=20130403143047">
+<table>
+  <thead>
+    <tr>
+      <th>Does whatever a Spoder can.</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @retro_games.each do |retro_game| %>
+      <tr>
+        <td><%= retro_game.description %></td>
+        <td><%= link_to 'Show', retro_game %></td>
+        <td><%= link_to 'Edit', edit_retro_game_path(retro_game) %></td>
+        <td><%= link_to 'Destroy', retro_game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Retro Game', new_retro_game_path %>
